@@ -1,0 +1,77 @@
+@import "variables";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    // font-family: opensan-reg;
+    background-color: $body-bg-clr;
+    scroll-behavior: smooth;
+    position: relative;
+    overflow: auto;
+    transition: 0.2s;
+    padding: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.pry-container {
+    width: 100%;
+    max-width: $pry-width;
+    margin: 0 auto;
+    background-color: $white;
+    border-radius: 10px;
+}
+.flex{
+    display: flex;
+}
+.flex-btw{
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-ctr{
+    display: flex;
+    align-items: center;
+}
+.flex-ctr-ctr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.justify-ctr{
+    justify-content: center;
+}
+.grid{
+    display: grid;
+}
+.three-containers-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.cover{
+    object-fit: cover;
+}
+.relative{
+    position: relative;
+}
+.circle{
+    border-radius: 50%;
+}
+.block{
+    display: block;
+}
+.inline-block{
+    display: inline-block;
+}
+.txt-ctr{
+    text-align: center;
+}

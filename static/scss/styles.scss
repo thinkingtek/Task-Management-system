@@ -1,0 +1,252 @@
+@import "variables";
+
+.pry-container{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.main-container{
+    padding: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+// sidebar
+.aside{
+    position: relative;
+    background-color: $light-grey;
+    border: none;
+    padding: 0.3rem 0 0.5rem 0.9rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    a.logo{
+        margin-bottom: 1rem;
+        color: $drk-purple;
+    }
+    ul{
+        margin-bottom: 1rem;
+    }
+
+    li a{
+        color: $drk-grey;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        text-align: center;
+        padding: 1rem 0.3rem;
+        margin-bottom: 0.25rem;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.7;
+    }
+    li a.active,li a:hover{
+        transition: ease-in-out 0.35s;
+        color: white;
+        background-color: $drk-purple;
+    }
+    li a img{
+        width: 20px;
+        height: 20px;
+    }
+    .upgrade-div{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+    }
+    .rocket{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        display: inline-block;
+        // margin-left: ;
+    }
+}
+// nav bar
+.search-bar-container{
+    position: relative;
+    img{
+        position: absolute;
+        left: 6px;
+        top: 4px;
+        width: 18px;
+        height: 18px;
+    }
+    .search-tasks{
+        background-color: $light-grey;
+        color: $drk-grey;
+        border: none;
+        border-radius: 5px;
+        padding: 6px 4px 6px 30px;
+       outline: none;
+    }
+    .search-tasks:focus{
+         outline: 1.2px solid $drk-purple;
+         color: black;
+         background-color: white;
+    }
+}
+
+.notification-icons{
+    align-items: center;
+    gap: 10px;
+    img{
+        width: 18px;
+        height: 18px;
+    }
+    .profile-pic{
+        border-radius: 50%;
+        object-fit: cover;
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.bottom-nav{
+    margin: 3rem 0;
+    align-items: center;
+    .prev-filter-sort{
+        gap: 6px;
+        img{
+            width: 14px;
+            height: 14px;
+        }
+    }
+    .prev-filter-sort div{
+        padding: 5px 9px;
+        font-size: 0.72rem;
+        border: 0.8px solid $drk-grey;
+        border-radius: 4px;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .add-profile{
+        gap: 10px;
+        align-items: center;
+        .profiles{
+            align-items: center;
+            img{
+                width: 21px;
+                height: 21px;
+                border-radius: 50px;
+            }
+        }
+        .add-icon{
+            width: 24px;
+            height: 24px;
+        }
+    }
+    
+    .add-task{
+        background-color: $drk-purple;
+        color: white;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        padding: 9px 9px;
+    }
+}
+.notification-icons{
+    gap: 6px;
+}
+
+.prev-filter-sort{
+    gap: 0.5rem;
+}
+
+// select boxes
+.status-grid-container{
+    gap: 3rem;
+    margin-bottom: 1rem;
+    .status-grid{
+        background-color: $white;
+        padding: 0.4rem;
+        border-radius: 4px;
+        border: 1px solid $drk-purple;
+        font-size: 0.8rem;
+    }
+    .status-grid img{
+        width: 15px;
+        height: 15px;
+    }
+}
+
+// task grids 
+.task-grid-container{
+    gap: 3rem;
+    .priority-time-category {
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+        div{
+            font-size: 0.7rem;
+            padding: 5px;
+            background-color: $light-grey;
+            color: purple;
+            border: none;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .priority{
+            background-color: $light-red;
+            color: #802525;
+        }
+        .time{
+            background-color: white;
+            color: $drk-purple;
+            gap: 5px;
+            box-shadow: 2px 3px rgba(131, 131, 131,0.3);
+            img{
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+    .task-details{
+        background-color: $light-grey;
+        padding: 8px 6px;
+        border-radius: 4px;
+        h4{
+            font-weight: lighter;
+            font-size: 0.9rem;
+            color: black;
+        }
+        .task-desc{
+            color: $drk-grey;
+            font-size: 0.8rem;
+            letter-spacing: 0.4;
+            margin: 0.5rem 0;
+        }
+        .task-title img{
+            width: 14px;
+            height: 14px;
+        }
+        .task-date{
+            border: 1px solid rgba(128, 128, 128,0.4);
+            background-color: $white;
+            border-radius: 4px;
+            padding: 2px 4px;
+            width: fit-content;
+            font-size: 0.8rem;
+            letter-spacing: 0.5;
+            gap: 5px;
+            img{
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        .users-icons{
+            margin-top: 13px;
+            .profile-pix img{
+                width: 23px;
+                height: 23px;
+            }
+            .icons-div {
+                gap: 5px;
+                img{
+                    width: 20;
+                    height: 20;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="pry-container">
+    {% include 'sidebar.html' %}
+    <section class="main-container">
+        <!-- top nav -->
+        <div class="flex flex-btw top-nav">
+            <div class="search-bar-container">
+                <img src="{% static 'img/icons/icons8-search-100.png' %}" alt="" srcset="">
+                <input type="search" name="search-task" id="" placeholder="Search tasks" class="search-tasks">
+            </div>
+            <div class="flex notification-icons">
+                <img src="{% static 'img/icons/icons8-message-50.png' %}" alt="" srcset="" class="icons">
+                <img src="{% static 'img/icons/icons8-notification-50.png' %}" alt="" srcset="" class="icons">
+                <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="icons profile-pic">
+            </div>
+        </div>
+    
+        <!-- bottom nav -->
+        <div class="flex flex-btw bottom-nav">
+            <div class="flex prev-filter-sort">
+                <div class="flex ">
+                    <img src="{% static 'img/icons/icons8-preview-100.png' %}" alt="" srcset="">
+                    <p>Preview</p>
+                </div>
+                <div class="flex sort">
+                    <img src="{% static 'img/icons/icons8-sort-24.png' %}" alt="" srcset="">
+                    <p>Sort</p>
+                </div>
+                <div class="flex filter">
+                    <img src="{% static 'img/icons/icons8-filter-100.png' %}" alt="" srcset="">
+                    <p>Filter</p>
+                </div>
+            </div>
+            <div class="flex add-profile">
+                <div class="relative flex profiles">
+                    <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover">
+                    <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover">
+                    <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover">
+                    <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover">
+                </div>
+                <img src="{% static 'img/icons/icons8-add-80.png' %}" alt="" srcset="" class="add-icon">
+                <div class="add-task">
+                    <p>+ Add task</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Tasks Status -->
+        <div class="grid three-containers-grid status-grid-container">
+                <div class="flex flex-btw status-grid inprogress-bar">
+                    <p>In progress <span>(2)</span></p>
+                    <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
+                </div>
+                <div class="flex flex-btw status-grid completed-bar">
+                    <p>Completed task <span>(4)</span></p>
+                    <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
+                </div>
+                <div class="flex flex-btw status-grid overdue-bar">
+                    <p>In progress <span>(2)</span></p>
+                    <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
+                </div>
+        </div>
+    
+        <!-- tasks -->
+        <div class="grid three-containers-grid task-grid-container">
+            <div>
+                <div class="grid three-containers-grid priority-time-category">
+                    <div class="priority">High</div>
+                    <div class="flex-ctr justify-ctr time">
+                        <img src="{% static 'img/icons/icons8-time-50.png' %}" alt="" srcset="">
+                        6.00pm
+                    </div>
+                    <div class="category">UX Design</div>
+                </div>
+                <div class="task-details">
+                    <div class="flex flex-btw task-title">
+                        <h4>User Flow</h4>
+                        <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
+                    </div>
+                    <p class="task-desc">
+                        Designing a dashboard involves a creating of visual interface
+                    </p>
+                    <div class="flex-ctr task-date">
+                        <img src="{% static 'img/icons/icons8-calender-64.png' %}" alt="" srcset="">
+                        0/4
+                    </div>
+                    <div class="flex flex-btw users-icons">
+                        <div class="relative flex profile-pix">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                        </div>
+                        <div class="flex-ctr icons-div">
+                            <img src="{% static 'img/icons/icons8-eye-50.png' %}" alt="" srcset="">
+                            <img src="{% static 'img/icons/icons8-trash-can-100.png' %}" alt="" srcset="">
+                            <img src="{% static 'img/icons/icons8-edit-32.png' %}" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div>
+                <div class="grid three-containers-grid priority-time-category">
+                    <div class="priority">High</div>
+                    <div class="flex-ctr justify-ctr time">
+                        <img src="{% static 'img/icons/icons8-time-50.png' %}" alt="" srcset="">
+                        6.00pm
+                    </div>
+                    <div class="category">UX Design</div>
+                </div>
+                <div class="task-details">
+                    <div class="flex flex-btw task-title">
+                        <h4>User Flow</h4>
+                        <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
+                    </div>
+                    <p class="task-desc">
+                        Designing a dashboard involves a creating of visual interface
+                    </p>
+                    <div class="flex-ctr task-date">
+                        <img src="{% static 'img/icons/icons8-calender-64.png' %}" alt="" srcset="">
+                        0/4
+                    </div>
+                    <div class="flex flex-btw users-icons">
+                        <div class="relative flex profile-pix">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                        </div>
+                        <div class="flex-ctr icons-div">
+                            <img src="{% static 'img/icons/icons8-eye-50.png' %}" alt="" srcset="">
+                            <img src="{% static 'img/icons/icons8-trash-can-100.png' %}" alt="" srcset="">
+                            <img src="{% static 'img/icons/icons8-edit-32.png' %}" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div>
+                <div class="grid three-containers-grid priority-time-category">
+                    <div class="priority">High</div>
+                    <div class="flex-ctr justify-ctr time">
+                        <img src="{% static 'img/icons/icons8-time-50.png' %}" alt="" srcset="">
+                        6.00pm
+                    </div>
+                    <div class="category">UX Design</div>
+                </div>
+                <div class="task-details">
+                    <div class="flex flex-btw task-title">
+                        <h4>User Flow</h4>
+                        <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
+                    </div>
+                    <p class="task-desc">
+                        Designing a dashboard involves a creating of visual interface
+                    </p>
+                    <div class="flex-ctr task-date">
+                        <img src="{% static 'img/icons/icons8-calender-64.png' %}" alt="" srcset="">
+                        0/4</div>
+                    <div class="flex flex-btw users-icons">
+                        <div class="relative flex profile-pix">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
+                        </div>
+                        <div class="flex-ctr icons-div">
+                            <img src="{% static 'img/icons/icons8-eye-50.png' %}" alt="" srcset="">
+                            <img src="{% static 'img/icons/icons8-trash-can-100.png' %}" alt="" srcset="">
+                            <img src="{% static 'img/icons/icons8-edit-32.png' %}" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock content %}
