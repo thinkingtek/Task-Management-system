@@ -250,3 +250,82 @@
         }
     }
 }
+
+// add task 
+.add-task-container{
+    background-color: white;
+    width: 100%;
+    max-width: 1000px;
+    z-index: $highest-z;
+    padding: 1rem;
+    border-radius: 10px;
+    .btn-container{
+        gap: 1rem;
+        button{
+            padding: 0.5rem 0.7rem;
+            border-radius: 2px;
+            border: none;
+            letter-spacing: 0.6;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s ease-out;
+        }
+        .submit-btn{
+            background-color: $fb-clr;
+            &:hover{
+                background-color: skyblue;
+            }
+        }
+        .cancel-btn{
+            background-color: $red-clr;
+            &:hover{
+                background-color: $light-red;
+            }
+        }
+    }
+    select{
+        cursor: pointer;
+    }
+
+    label,input,select,textarea{
+        display: block;
+        width: 100%;
+        padding: 0.4rem 0.4rem;
+        outline: none;
+        border: 1px solid rgba(128, 128, 128,0.4);
+        border-radius: 7px;
+        &:focus{
+            border: 1px solid $drk-purple;
+        }
+    }
+    label{
+        padding: 0.2rem 0;
+        border: none;
+        color: $drk-grey;
+    }
+    .form-grid-2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .form-grid-3{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .form-grid-2,.form-grid-3{
+        gap: 2rem;
+    }
+    .input-container{
+        padding: 0.3rem 0;
+        margin-bottom: 0.7rem;
+        
+    }
+
+}
+
+.d-none{
+    display: none;
+}
+.d-block{
+    display: block;
+}

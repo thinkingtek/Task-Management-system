@@ -3,6 +3,9 @@
 
 
 {% block content %}
+<div class="d-none modalbox" id="modalbox">
+    {% include 'task/add-task.html' %}
+</div>
 
 <div class="pry-container">
     {% include 'sidebar.html' %}
@@ -44,7 +47,7 @@
                     <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover">
                 </div>
                 <img src="{% static 'img/icons/icons8-add-80.png' %}" alt="" srcset="" class="add-icon">
-                <div class="add-task">
+                <div class="pointer add-task" id="add-task-btn">
                     <p>+ Add task</p>
                 </div>
             </div>
@@ -179,6 +182,7 @@
             </div>
         </div>
     </section>
+    
 </div>
 
 {% endblock content %}

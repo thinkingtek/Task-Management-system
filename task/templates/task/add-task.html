@@ -1,0 +1,43 @@
+<div class="d-none add-task-container" id="add-task-container">
+    <h3 class="txt-ctr">Add Task</h3>
+    <form action="" method="post" enctype="multipart/form-data" class="add-task-form">
+        <div class="form-grid-2">
+            <div class="input-container">
+                {{addtaskform.title.label_tag}}
+                {{addtaskform.title}}
+            </div>
+            <div class="input-container">
+                {{addtaskform.category.label_tag}}
+                {{addtaskform.category}}
+            </div>
+        </div>
+        
+        <div class="form-grid-3">
+            <div class="input-container">
+                {{addtaskform.assigned_to.label_tag}}
+                {{addtaskform.assigned_to}}
+            </div>
+            <div class="input-container">
+                {{addtaskform.priority.label_tag}}
+                {{addtaskform.priority}}
+            </div>
+            <div class="input-container">
+                {{addtaskform.status.label_tag}}
+                {{addtaskform.status}}
+            </div>
+        </div>
+        
+        <div class="input-container">
+            {{addtaskform.due_date.label_tag}}
+            {{addtaskform.due_date}}
+        </div>
+        <div class="input-container">
+            {{addtaskform.description.label_tag}}
+            {{addtaskform.description}}
+        </div>
+        <div class="flex-ctr-ctr input-container btn-container">
+            <button type="submit" class="submit-btn" id="submit-task">Submit</button>
+            <button type="button" class="cancel-btn" id="cancel-task">Cancel</button>
+        </div>
+    </form>
+</div>
