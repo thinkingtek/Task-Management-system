@@ -22,6 +22,8 @@ body {
     gap: 1.2rem; }
   .auth-form-container .form-group {
     margin-bottom: 0.4rem; }
+    .auth-form-container .form-group:last-child {
+      margin-bottom: 0; }
   .auth-form-container input, .auth-form-container select, .auth-form-container textarea {
     display: block;
     width: 100%;
@@ -50,7 +52,8 @@ body {
     .auth-form-container .submit-btn:hover {
       background-color: gray; }
   .auth-form-container .have-account {
-    gap: 0.4rem; }
+    gap: 0.4rem;
+    margin: 0.4rem 0; }
     .auth-form-container .have-account a {
       background-color: grey;
       color: white;

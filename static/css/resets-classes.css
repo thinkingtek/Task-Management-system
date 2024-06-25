@@ -45,6 +45,9 @@ ul {
   background-color: #ffffff;
   border-radius: 10px; }
 
+.border-none {
+  border: none; }
+
 .flex {
   display: flex; }
 
@@ -67,6 +70,9 @@ ul {
 .grid {
   display: grid; }
 
+.align-ctr {
+  align-items: center; }
+
 .three-containers-grid {
   grid-template-columns: 1fr 1fr 1fr; }
 
@@ -78,6 +84,16 @@ ul {
 
 .circle {
   border-radius: 50%; }
+
+.back-btn {
+  display: inline-block;
+  padding: 0.4rem;
+  background-color: #3a37e6;
+  color: white;
+  font-size: 0.9rem;
+  transition: ease-out 0.2s; }
+  .back-btn:hover {
+    background-color: gray; }
 
 .block {
   display: block; }

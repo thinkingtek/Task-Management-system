@@ -54,6 +54,9 @@ ul {
     background-color: $white;
     border-radius: 10px;
 }
+.border-none{
+    border: none;
+}
 .flex{
     display: flex;
 }
@@ -76,6 +79,9 @@ ul {
 .grid{
     display: grid;
 }
+.align-ctr{
+    align-items: center;
+}
 .three-containers-grid{
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -87,6 +93,17 @@ ul {
 }
 .circle{
     border-radius: 50%;
+}
+.back-btn{
+    display: inline-block;
+    padding: 0.4rem;
+    background-color: $drk-purple;
+    color: white;
+    font-size: 0.9rem;
+    transition: ease-out 0.2s;
+    &:hover{
+        background-color: gray;
+    }
 }
 .block{
     display: block;

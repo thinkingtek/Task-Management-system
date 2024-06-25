@@ -26,6 +26,9 @@ body{
     }
     .form-group{
         margin-bottom: 0.4rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
     }
 
     input,select,textarea{
@@ -63,6 +66,7 @@ body{
     }
     .have-account{
         gap: 0.4rem;
+        margin: 0.4rem 0;
         a{
             background-color: grey;
             color: white;

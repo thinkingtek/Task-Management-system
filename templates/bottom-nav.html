@@ -1,0 +1,46 @@
+{% load static %}
+
+<!-- bottom nav -->
+<div class="flex flex-btw bottom-nav">
+  <div class="flex prev-filter-sort">
+    <div class="flex">
+      <img
+        src="{% static 'img/icons/icons8-preview-100.png' %}"
+        alt=""
+        srcset=""
+      />
+      <p>Preview</p>
+    </div>
+    <div class="flex sort">
+      <img src="{% static 'img/icons/icons8-sort-24.png' %}" alt="" srcset="" />
+      <p>Sort</p>
+    </div>
+    <div class="flex filter">
+      <img
+        src="{% static 'img/icons/icons8-filter-100.png' %}"
+        alt=""
+        srcset=""
+      />
+      <p>Filter</p>
+    </div>
+  </div>
+  <div class="flex add-profile">
+    <div class="relative flex profiles">
+      <img
+        src="{% static 'img/profile-pic.jpg' %}"
+        alt=""
+        srcset=""
+        class="cover"
+      />
+    </div>
+    <img
+      src="{% static 'img/icons/icons8-add-80.png' %}"
+      alt=""
+      srcset=""
+      class="add-icon"
+    />
+    <div class="pointer add-task" id="add-task-btn">
+      <p>+ Add task</p>
+    </div>
+  </div>
+</div>

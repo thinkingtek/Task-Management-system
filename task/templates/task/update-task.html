@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-none modalbox" id="modalbox">
+    {% include 'task/add-task.html' %}
+</div>
+
+<div class="pry-container">
+    {% include 'sidebar.html' %}
+    <section class="main-container task-details-container">
+        
+        {% include 'top-nav.html' %}
+        
+        <!-- bottom nav -->
+<div class="flex flex-btw bottom-nav">
+    <div class="flex prev-filter-sort detail-bottom-nav">
+      <a href="{{request.META.HTTP_REFERER}}"class="back-btn"
+        >&laquo; Back</a
+      >
+    </div>
+    <div class="flex add-profile">
+      <div class="relative flex profiles">
+        <img
+          src="{% static 'img/profile-pic.jpg' %}"
+          alt=""
+          srcset=""
+          class="cover"
+        />
+      </div>
+      <img
+        src="{% static 'img/icons/icons8-add-80.png' %}"
+        alt=""
+        srcset=""
+        class="add-icon"
+      />
+      <div class="pointer add-task" id="add-task-btn">
+        <p>+ Add task</p>
+      </div>
+    </div>
+  </div>
+
+    <section class="add-task-container" id="add-task-container">
+        <h3 class="txt-ctr">Update Task</h3>
+        <form action="{% url 'task:add-task' %}" method="post" enctype="multipart/form-data" class="add-task-form">
+            {% csrf_token %}
+            <div class="form-grid-2">
+                <div class="input-container">
+                    {{form.title.label_tag}}
+                    {{form.title}}
+                </div>
+                <div class="input-container">
+                    {{form.category.label_tag}}
+                    {{form.category}}
+                </div>
+            </div>
+            
+            <div class="form-grid-3">
+                <div class="input-container">
+                    {{form.assigned_to.label_tag}}
+                    {{form.assigned_to}}
+                </div>
+                <div class="input-container">
+                    {{form.priority.label_tag}}
+                    {{form.priority}}
+                </div>
+                <div class="input-container">
+                    {{form.status.label_tag}}
+                    {{form.status}}
+                </div>
+            </div>
+            
+            <div class="input-container">
+                {{form.due_date.label_tag}}
+                {{form.due_date}}
+            </div>
+            <div class="input-container">
+                {{form.description.label_tag}}
+                {{form.description}}
+            </div>
+            <div class="flex-ctr-ctr input-container btn-container">
+                <button type="submit" class="submit-btn" id="submit-task">Submit</button>
+                <button type="button" class="cancel-btn" id="cancel-task">Cancel</button>
+            </div>
+        </form>
+    </section>
+    
+    </section>
+    
+</div>
+
+{% endblock content %}

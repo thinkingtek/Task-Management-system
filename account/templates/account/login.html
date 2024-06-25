@@ -20,14 +20,10 @@
     </div>
     {% if form.non_field_errors %}
     {% for error in form.non_field_errors %}
-    <div class="error-container">
-        <h5 class="">{{error}}</h5>
-    </div>
+    <h5 class="error">{{error}}</h5>
     {% endfor %}
     {% endif %}
-    <div class="form-group">
     <input type="submit" value="Login" class="pointer submit-btn"/>
-    </div>
     </form> 
     <div class="flex-ctr have-account">
         <p>Do you need an account ?</p>

@@ -116,6 +116,7 @@
     }
 }
 
+// bottom nav
 .bottom-nav{
     margin: 3rem 0;
     align-items: center;
@@ -133,6 +134,25 @@
         border-radius: 4px;
         align-items: center;
         gap: 5px;
+    }
+    .detail-bottom-nav .del-btn,
+    .detail-bottom-nav a{
+        padding: 0.4rem;
+        color: white;
+        font-size: 0.85rem;
+        transition: ease-out 0.2s;
+        &:hover{
+            background-color: gray;
+            color: white;
+        }
+    }
+    .detail-bottom-nav .update-btn{
+        background-color: $drk-purple;
+        color: white;
+    }
+    .detail-bottom-nav .del-btn{
+        background-color: $light-red;
+        color: rgb(129, 9, 9);
     }
 
     .add-profile{
@@ -266,7 +286,7 @@
     }
 }
 
-// add task 
+// add task page
 .add-task-container{
     background-color: white;
     width: 100%;
@@ -341,6 +361,72 @@
         
     }
 
+}
+
+// delete task
+.delete-task-container{
+    width: fit-content;
+    padding: 1rem;
+    .confirmation-container{
+        margin-top: 0.4rem;
+        gap: 0.5rem;
+    }
+    .task-title{
+        padding: 0.5rem;
+        border-radius: 5px;
+        font-size: 0.85rem;
+        display: inline-block;
+        color: rgb(124, 13, 13);
+        background-color: $light-red;
+    }
+    .cancelBtn,
+    .del-task-link{
+        padding: 0.5rem;
+        color: rgb(124, 13, 13);
+        background-color: $light-red;
+        border: none;
+        transition: ease-out 0.2s;
+        color: rgb(124, 13, 13);
+        &:hover{
+            background-color: grey;
+            color: white;
+        }
+    }
+    .cancelBtn{
+        background-color: $drk-grey;
+        color: white;
+    }
+}
+
+// Task details page
+.task-details-container{
+    .task-details{
+        font-size: 0.9rem;
+        p{
+            margin-bottom: 0.9rem;
+        }
+        span{
+            font-size: 0.8rem;
+            padding: 0.25rem 0.4rem;
+            background-color: gray;
+            color: white;
+            border-radius: 4px;
+        }
+        .task-priority span{
+            background-color: $light-red;
+            color: rgb(107, 10, 10);
+        }
+        .task-status span{
+            background-color: $drk-purple;
+            // color: rgb(107, 10, 10);
+        }
+    }
+    .task-desc{
+        padding-top: 0.4rem;
+        margin: 0.4rem 0;
+        // border-radius: 5px;
+        border-top: 1px solid rgba(107, 106, 106,0.4);
+    }
 }
 
 .d-none{

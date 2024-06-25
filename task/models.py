@@ -1,5 +1,6 @@
 from django.db import models
 from account.models import User
+from django.urls import reverse
 
 
 class Task(models.Model):
@@ -21,4 +22,17 @@ class Task(models.Model):
         max_length=15, choices=STATUS_CHOICES)
     category = models.CharField(max_length=100)
     description = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
     due_date = models.DateTimeField(editable=True)
+
+    class Meta:
+        ordering = ['-timestamp']
+
+    def get_absolute_url(self):
+        return reverse("task:task-details", kwargs={"pk": self.pk})
+
+    def get_update_url(self):
+        return reverse("task:task-update", kwargs={"pk": self.pk})
+
+    def __str__(self):
+        return self.title

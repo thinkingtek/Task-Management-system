@@ -1,0 +1,7 @@
+<div class="d-none txt-ctr add-task-container delete-task-container" id="delete-task-container">
+   <p>Are you sure you want to delete this Task <span class="task-title">" {{task.title}} "</span> ?</p>
+    <div class="flex-ctr-ctr confirmation-container">
+        <a href="{% url 'task:task-delete' task.pk %}" class="del-task-link">Delete</a>
+        <button type="button" class="pointer cancelBtn" onclick="closeModal()">Cancel</button>
+    </div>
+</div>

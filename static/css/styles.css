@@ -107,6 +107,22 @@
     border-radius: 4px;
     align-items: center;
     gap: 5px; }
+  .bottom-nav .detail-bottom-nav .del-btn,
+  .bottom-nav .detail-bottom-nav a {
+    padding: 0.4rem;
+    color: white;
+    font-size: 0.85rem;
+    transition: ease-out 0.2s; }
+    .bottom-nav .detail-bottom-nav .del-btn:hover,
+    .bottom-nav .detail-bottom-nav a:hover {
+      background-color: gray;
+      color: white; }
+  .bottom-nav .detail-bottom-nav .update-btn {
+    background-color: #3a37e6;
+    color: white; }
+  .bottom-nav .detail-bottom-nav .del-btn {
+    background-color: #ffd0d0;
+    color: #810909; }
   .bottom-nav .add-profile {
     gap: 10px;
     align-items: center; }
@@ -264,6 +280,55 @@
   .add-task-container .input-container {
     padding: 0.3rem 0;
     margin-bottom: 0.7rem; }
+
+.delete-task-container {
+  width: fit-content;
+  padding: 1rem; }
+  .delete-task-container .confirmation-container {
+    margin-top: 0.4rem;
+    gap: 0.5rem; }
+  .delete-task-container .task-title {
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    display: inline-block;
+    color: #7c0d0d;
+    background-color: #ffd0d0; }
+  .delete-task-container .cancelBtn,
+  .delete-task-container .del-task-link {
+    padding: 0.5rem;
+    color: #7c0d0d;
+    background-color: #ffd0d0;
+    border: none;
+    transition: ease-out 0.2s;
+    color: #7c0d0d; }
+    .delete-task-container .cancelBtn:hover,
+    .delete-task-container .del-task-link:hover {
+      background-color: grey;
+      color: white; }
+  .delete-task-container .cancelBtn {
+    background-color: #756e6e;
+    color: white; }
+
+.task-details-container .task-details {
+  font-size: 0.9rem; }
+  .task-details-container .task-details p {
+    margin-bottom: 0.9rem; }
+  .task-details-container .task-details span {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.4rem;
+    background-color: gray;
+    color: white;
+    border-radius: 4px; }
+  .task-details-container .task-details .task-priority span {
+    background-color: #ffd0d0;
+    color: #6b0a0a; }
+  .task-details-container .task-details .task-status span {
+    background-color: #3a37e6; }
+.task-details-container .task-desc {
+  padding-top: 0.4rem;
+  margin: 0.4rem 0;
+  border-top: 1px solid rgba(107, 106, 106, 0.4); }
 
 .d-none {
   display: none; }

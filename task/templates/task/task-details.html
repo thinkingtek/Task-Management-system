@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="d-none modalbox" id="modalbox">
+    {% include 'task/add-task.html' %}
+    {% include 'task/delete-task.html' %}
+</div>
+
+<div class="pry-container">
+    {% include 'sidebar.html' %}
+    <section class="main-container task-details-container">
+        
+    {% include 'top-nav.html' %}
+    <!-- bottom nav -->
+    <div class="flex flex-btw bottom-nav">
+        <div class="flex prev-filter-sort detail-bottom-nav">
+        <a href="{{request.META.HTTP_REFERER}}"class="back-btn"
+            >&laquo; Back</a
+        >
+        <a href="{% url 'task:task-update' task.pk %}" class="update-btn">Update</a>
+        <button type="button" class="pointer border-none del-btn" id="deltask-btn">Delete</button>
+        </div>
+        <div class="flex add-profile">
+        <div class="relative flex profiles">
+            <img
+            src="{% static 'img/profile-pic.jpg' %}"
+            alt=""
+            srcset=""
+            class="cover"
+            />
+        </div>
+        <img
+            src="{% static 'img/icons/icons8-add-80.png' %}"
+            alt=""
+            srcset=""
+            class="add-icon"
+        />
+        <div class="pointer add-task" id="add-task-btn">
+            <p>+ Add task</p>
+        </div>
+        </div>
+    </div>
+
+    <section class="task-details">
+        <p class="task-category">Category: <span>{{task.category}}</span></p>
+        <p class="assigned-to">Assigned to: <span>{{task.assigned_to}}</span></p>
+        <p class="task-status">Status: <span>{{task.status}}</span></p>
+        <p class="task-priority">Priority: <span>{{task.priority}}</span></p>
+        <p class="task-due-date">Due date: <span>{{task.due_date}}</span></p>
+        <p class="task-desc">
+            {{task.description}}
+        </p>
+    </section>
+    
+    </section>
+    
+</div>
+
+{% endblock content %}

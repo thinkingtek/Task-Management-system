@@ -11,7 +11,8 @@
     {% include 'sidebar.html' %}
     <section class="main-container">
         
-        {% include 'nav.html' %}
+        {% include 'top-nav.html' %}
+        {% include 'bottom-nav.html' %}
     
         <!-- Tasks Status -->
         <div class="grid three-containers-grid status-grid-container">
@@ -31,26 +32,28 @@
     
         <!-- tasks -->
         <div class="grid three-containers-grid task-grid-container">
+
+            {% for task in tasks %}
             <div>
-                <div class="grid three-containers-grid priority-time-category">
-                    <div class="priority">High</div>
+                <div class="grid align-ctr three-containers-grid priority-time-category">
+                    <div class="priority">{{task.priority}}</div>
                     <div class="flex-ctr justify-ctr time">
                         <img src="{% static 'img/icons/icons8-time-50.png' %}" alt="" srcset="">
-                        6.00pm
+                        {{task.timestamp|date:"g:i a"}}
                     </div>
-                    <div class="category">UX Design</div>
+                    <div class="category">{{task.category}}</div>
                 </div>
                 <div class="task-details">
                     <div class="flex flex-btw task-title">
-                        <h4>User Flow</h4>
+                        <a href="{{task.get_absolute_url}}">{{task.title}}</a>
                         <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
                     </div>
                     <p class="task-desc">
-                        Designing a dashboard involves a creating of visual interface
+                        {{task.description}}
                     </p>
                     <div class="flex-ctr task-date">
                         <img src="{% static 'img/icons/icons8-calender-64.png' %}" alt="" srcset="">
-                        0/4
+                        {{task.due_date|date:"j / y"}}
                     </div>
                     <div class="flex flex-btw users-icons">
                         <div class="relative flex profile-pix">
@@ -62,84 +65,16 @@
                         <div class="flex-ctr icons-div">
                             <img src="{% static 'img/icons/icons8-eye-50.png' %}" alt="" srcset="">
                             <img src="{% static 'img/icons/icons8-trash-can-100.png' %}" alt="" srcset="">
-                            <img src="{% static 'img/icons/icons8-edit-32.png' %}" alt="" srcset="">
+                            <a href="{{task.get_update_url}}" class="edit-task">
+                                <img src="{% static 'img/icons/icons8-edit-32.png' %}" alt="" srcset="">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-    
-            <div>
-                <div class="grid three-containers-grid priority-time-category">
-                    <div class="priority">High</div>
-                    <div class="flex-ctr justify-ctr time">
-                        <img src="{% static 'img/icons/icons8-time-50.png' %}" alt="" srcset="">
-                        6.00pm
-                    </div>
-                    <div class="category">UX Design</div>
-                </div>
-                <div class="task-details">
-                    <div class="flex flex-btw task-title">
-                        <h4>User Flow</h4>
-                        <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
-                    </div>
-                    <p class="task-desc">
-                        Designing a dashboard involves a creating of visual interface
-                    </p>
-                    <div class="flex-ctr task-date">
-                        <img src="{% static 'img/icons/icons8-calender-64.png' %}" alt="" srcset="">
-                        0/4
-                    </div>
-                    <div class="flex flex-btw users-icons">
-                        <div class="relative flex profile-pix">
-                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
-                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
-                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
-                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
-                        </div>
-                        <div class="flex-ctr icons-div">
-                            <img src="{% static 'img/icons/icons8-eye-50.png' %}" alt="" srcset="">
-                            <img src="{% static 'img/icons/icons8-trash-can-100.png' %}" alt="" srcset="">
-                            <img src="{% static 'img/icons/icons8-edit-32.png' %}" alt="" srcset="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div>
-                <div class="grid three-containers-grid priority-time-category">
-                    <div class="priority">High</div>
-                    <div class="flex-ctr justify-ctr time">
-                        <img src="{% static 'img/icons/icons8-time-50.png' %}" alt="" srcset="">
-                        6.00pm
-                    </div>
-                    <div class="category">UX Design</div>
-                </div>
-                <div class="task-details">
-                    <div class="flex flex-btw task-title">
-                        <h4>User Flow</h4>
-                        <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
-                    </div>
-                    <p class="task-desc">
-                        Designing a dashboard involves a creating of visual interface
-                    </p>
-                    <div class="flex-ctr task-date">
-                        <img src="{% static 'img/icons/icons8-calender-64.png' %}" alt="" srcset="">
-                        0/4</div>
-                    <div class="flex flex-btw users-icons">
-                        <div class="relative flex profile-pix">
-                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
-                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
-                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
-                            <img src="{% static 'img/profile-pic.jpg' %}" alt="" srcset="" class="cover circle">
-                        </div>
-                        <div class="flex-ctr icons-div">
-                            <img src="{% static 'img/icons/icons8-eye-50.png' %}" alt="" srcset="">
-                            <img src="{% static 'img/icons/icons8-trash-can-100.png' %}" alt="" srcset="">
-                            <img src="{% static 'img/icons/icons8-edit-32.png' %}" alt="" srcset="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% empty %}
+            <h4>No task  added</h4>
+            {% endfor %}
         </div>
     </section>
     

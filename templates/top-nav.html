@@ -1,0 +1,44 @@
+{% load static %}
+
+<!-- top nav -->
+<div class="flex flex-btw top-nav">
+  <div class="search-bar-container">
+    <img
+      src="{% static 'img/icons/icons8-search-100.png' %}"
+      alt=""
+      srcset=""
+    />
+    <input
+      type="search"
+      name="search-task"
+      id=""
+      placeholder="Search tasks"
+      class="search-tasks"
+    />
+  </div>
+  <div class="flex notification-icons">
+    <img
+      src="{% static 'img/icons/icons8-message-50.png' %}"
+      alt=""
+      srcset=""
+      class="icons"
+    />
+    <img
+      src="{% static 'img/icons/icons8-notification-50.png' %}"
+      alt=""
+      srcset=""
+      class="icons"
+    />
+    {% if request.user.is_authenticated %}
+    <img
+      src="{% static 'img/profile-pic.jpg' %}"
+      alt=""
+      srcset=""
+      class="icons profile-pic"
+    />
+    <a href="{% url 'logout' %}" class="auth-btn logout-btn">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}" class="auth-btn login-btn">Login</a>
+    {% endif %}
+  </div>
+</div>
