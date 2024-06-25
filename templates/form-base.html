@@ -1,0 +1,36 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% if desc %}
+        <meta name="description" content="{{desc}}" />
+        {% else %}
+        <meta name="description" content="Authorizatoin Page" />
+        {% endif %}
+    
+        <title>
+            {% if title %}
+            {{title}}
+            {% else %}
+            Task Management Webapp
+            {% endif %}
+        </title>
+        
+        <link rel="stylesheet" href="{% static '/css/resets-classes.css' %}" />
+        <link rel="stylesheet" href="{% static '/css/auth-styles.css' %}" />
+    </head>
+    <body id="auth-body">
+        <div class="auth-form-container">
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+        <script src="{% static '/js/auth-core.js' %}"></script>
+        {% block js %}
+
+        {% endblock js %}
+    </body>
+</html>

@@ -99,6 +99,21 @@
         width: 22px;
         height: 22px;
     }
+    .auth-btn{
+        background-color: $red-clr;
+        color: white;
+        padding: 0.3rem 0.5rem;
+        border-radius: 5px;
+        letter-spacing: 0.6;
+        font-size: 0.9rem;
+        transition: ease-in-out 0.2s;
+        &:hover{
+            background-color: $drk-grey;
+        }
+    }
+    .login-btn{
+        background-color: $drk-purple;
+    }
 }
 
 .bottom-nav{
@@ -288,7 +303,7 @@
         cursor: pointer;
     }
 
-    label,input,select,textarea{
+    input,select,textarea{
         display: block;
         width: 100%;
         padding: 0.4rem 0.4rem;
@@ -300,9 +315,14 @@
         }
     }
     label{
+        cursor: pointer;
+        display: inline-block;
         padding: 0.2rem 0;
         border: none;
         color: $drk-grey;
+        &:hover{
+        color: $drk-purple;
+        }
     }
     .form-grid-2{
         display: grid;

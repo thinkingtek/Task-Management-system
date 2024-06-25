@@ -79,6 +79,18 @@
     object-fit: cover;
     width: 22px;
     height: 22px; }
+  .notification-icons .auth-btn {
+    background-color: #f6214b;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    letter-spacing: 0.6;
+    font-size: 0.9rem;
+    transition: ease-in-out 0.2s; }
+    .notification-icons .auth-btn:hover {
+      background-color: #756e6e; }
+  .notification-icons .login-btn {
+    background-color: #3a37e6; }
 
 .bottom-nav {
   margin: 3rem 0;
@@ -224,19 +236,23 @@
         background-color: #ffd0d0; }
   .add-task-container select {
     cursor: pointer; }
-  .add-task-container label, .add-task-container input, .add-task-container select, .add-task-container textarea {
+  .add-task-container input, .add-task-container select, .add-task-container textarea {
     display: block;
     width: 100%;
     padding: 0.4rem 0.4rem;
     outline: none;
     border: 1px solid rgba(128, 128, 128, 0.4);
     border-radius: 7px; }
-    .add-task-container label:focus, .add-task-container input:focus, .add-task-container select:focus, .add-task-container textarea:focus {
+    .add-task-container input:focus, .add-task-container select:focus, .add-task-container textarea:focus {
       border: 1px solid #3a37e6; }
   .add-task-container label {
+    cursor: pointer;
+    display: inline-block;
     padding: 0.2rem 0;
     border: none;
     color: #756e6e; }
+    .add-task-container label:hover {
+      color: #3a37e6; }
   .add-task-container .form-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr; }

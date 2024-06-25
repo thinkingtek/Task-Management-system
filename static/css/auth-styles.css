@@ -1,0 +1,76 @@
+body {
+  background-color: #3a37e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  max-width: 100vw;
+  padding: 1.5rem;
+  background: url("/static/img/backgrounds/pexels-photo-6804077.jpeg") no-repeat center center/cover; }
+
+.auth-form-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px; }
+  .auth-form-container .form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem; }
+  .auth-form-container .form-group {
+    margin-bottom: 0.4rem; }
+  .auth-form-container input, .auth-form-container select, .auth-form-container textarea {
+    display: block;
+    width: 100%;
+    padding: 0.4rem 0.4rem;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    border-radius: 7px; }
+    .auth-form-container input:focus, .auth-form-container select:focus, .auth-form-container textarea:focus {
+      border: 1px solid #3a37e6; }
+  .auth-form-container label {
+    padding: 0.2rem 0;
+    border: none;
+    color: #756e6e;
+    font-size: 0.92rem;
+    cursor: pointer;
+    display: inline-block; }
+    .auth-form-container label:hover {
+      color: #3a37e6; }
+  .auth-form-container .submit-btn {
+    background-color: #3a37e6;
+    color: white;
+    padding: 0.6rem 0.4rem;
+    font-size: 1rem;
+    letter-spacing: 0.7;
+    transition: 0.2s ease-out; }
+    .auth-form-container .submit-btn:hover {
+      background-color: gray; }
+  .auth-form-container .have-account {
+    gap: 0.4rem; }
+    .auth-form-container .have-account a {
+      background-color: grey;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.5rem; }
+    .auth-form-container .have-account .home {
+      background-color: #3a37e6; }
+  .auth-form-container .forgot-p {
+    padding: 0.5rem;
+    background-color: grey;
+    border: none;
+    color: white;
+    margin-top: 0.2rem;
+    display: inline-block;
+    font-size: 0.9rem;
+    letter-spacing: 0.6; }
+  .auth-form-container .help-text, .auth-form-container .error {
+    font-size: 0.83rem;
+    padding: 0.25rem 0; }
+  .auth-form-container .error {
+    color: red; }

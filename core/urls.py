@@ -23,6 +23,10 @@ from task.views import *
 
 urlpatterns = [
     path('', include('task.urls', namespace='task')),
+    path('create-account/', register, name='signin'),
+    path('login/', UserLoginView.as_view(redirect_authenticated_user=True), name='login'),
+    path('logout/', userLogout, name='logout'),
+    path('activate/<slug:uidb64>/<slug:token>)/', activate, name='activate'),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:
