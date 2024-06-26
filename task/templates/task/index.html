@@ -17,15 +17,15 @@
         <!-- Tasks Status -->
         <div class="grid three-containers-grid status-grid-container">
                 <div class="flex flex-btw status-grid inprogress-bar">
-                    <p>In progress <span>(2)</span></p>
+                    <p>In progress <span>({{inprogress_tasks.count}})</span></p>
                     <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
                 </div>
                 <div class="flex flex-btw status-grid completed-bar">
-                    <p>Completed task <span>(4)</span></p>
+                    <p>Completed task <span>({{completed_tasks.count}})</span></p>
                     <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
                 </div>
                 <div class="flex flex-btw status-grid overdue-bar">
-                    <p>In progress <span>(2)</span></p>
+                    <p>Overdue <span>({{overdue_tasks.count}})</span></p>
                     <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
                 </div>
         </div>

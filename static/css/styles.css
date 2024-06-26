@@ -164,7 +164,7 @@
 .task-grid-container {
   gap: 3rem; }
   .task-grid-container .priority-time-category {
-    gap: 1rem;
+    gap: 0.8rem;
     margin-bottom: 0.5rem; }
     .task-grid-container .priority-time-category div {
       font-size: 0.7rem;

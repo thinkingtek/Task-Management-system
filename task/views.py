@@ -15,6 +15,9 @@ class Index(TemplateView):
     def get_context_data(self, **kwargs):
         tasks = Task.objects.all()
         context = super().get_context_data(**kwargs)
+        context['inprogress_tasks'] = tasks.filter(status="in progress")
+        context['overdue_tasks'] = tasks.filter(status="overdue")
+        context['completed_tasks'] = tasks.filter(status="completed")
         context['tasks'] = tasks
         context['title'] = 'Task Management'
         context['addtaskform'] = AddTaskForm
@@ -28,7 +31,7 @@ class AddTask(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     success_message = 'Task added'
 
     def form_valid(self, form):
-        # form.instance.user = self.request.user
+        form.instance.task_creator = self.request.user
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):

@@ -9,7 +9,7 @@ class AddTaskForm(forms.ModelForm):
     class Meta:
         model = Task
         fields = "__all__"
-        # exclude = ('user', 'timestamp')
+        exclude = ('task_creator', 'timestamp')
         widgets = {
             'description': forms.Textarea(attrs={
                 'placeholder': "A short description of the project"

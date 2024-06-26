@@ -14,7 +14,9 @@ class Task(models.Model):
         ('medium', 'Medium'),
         ('high', 'High')
     )
-    assigned_to = models.ForeignKey(User, on_delete=models.CASCADE)
+    task_creator = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="Task_Manager")
+    assigned_to = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=100)
     priority = models.CharField(
         max_length=15, choices=PRIORITY_CHOICES)
@@ -23,7 +25,7 @@ class Task(models.Model):
     category = models.CharField(max_length=100)
     description = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
-    due_date = models.DateTimeField(editable=True)
+    due_date = models.DateTimeField()
 
     class Meta:
         ordering = ['-timestamp']
