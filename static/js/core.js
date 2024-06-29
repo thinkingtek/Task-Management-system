@@ -12,12 +12,16 @@ const cancelBtn = document.getElementById("cancel-task");
 // cancel modal
 function closeModal() {
     modalBox.style.display = "none";
+    addTaskDiv.style.display = "none";
+    deleteTaskDiv.style.display = "none";
 }
 addTaskBtn.addEventListener('click',e => {
     modalBox.style.display = "flex";
-    addTaskDiv.classList.add("d-block");
+    addTaskDiv.style.display = "block";
+    // addTaskDiv.classList.add("d-block");
 })
 delTaskBtn.addEventListener('click',e => {
     modalBox.style.display = "flex";
-    deleteTaskDiv.classList.add("d-block");
+    addTaskDiv.style.display = "none";
+    deleteTaskDiv.style.display = "block";
 })

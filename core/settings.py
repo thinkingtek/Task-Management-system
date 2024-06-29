@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     # packages
     'django_cleanup.apps.CleanupConfig',
+    'rest_framework',
 
     # My Apps
     'account.apps.AccountConfig',
