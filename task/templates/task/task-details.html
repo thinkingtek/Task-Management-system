@@ -20,26 +20,30 @@
             >&laquo; Back</a
         >
         <a href="{% url 'task:task-update' task.pk %}" class="update-btn">Update</a>
-        <button type="button" class="pointer border-none del-btn" id="deltask-btn">Delete</button>
+        <button type="button" class="pointer border-none del-btn" id="deltask-btn" onclick="delTask()">Delete</button>
         </div>
         <div class="flex add-profile">
-        <div class="relative flex profiles">
+            
+            {% if user.is_authenticated %}
             <img
-            src="{% static 'img/profile-pic.jpg' %}"
-            alt=""
-            srcset=""
-            class="cover"
+                src="{% static 'img/icons/icons8-add-80.png' %}"
+                alt=""
+                srcset=""
+                class="add-icon"
             />
-        </div>
-        <img
-            src="{% static 'img/icons/icons8-add-80.png' %}"
-            alt=""
-            srcset=""
-            class="add-icon"
-        />
-        <div class="pointer add-task" id="add-task-btn">
-            <p>+ Add task</p>
-        </div>
+            <div class="relative flex profiles">
+                <img
+                src="{% static 'img/profile-pic.jpg' %}"
+                alt=""
+                srcset=""
+                class="cover"
+                />
+            </div>
+            <div class="pointer add-task" id="add-task-btn" onclick="addTask()">
+                <p>+ Add task</p>
+            </div>
+            {% endif %}
+
         </div>
     </div>
 

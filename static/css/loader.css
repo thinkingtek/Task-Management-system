@@ -1,0 +1,18 @@
+/* HTML: <div class="loader"></div> */
+.loader-container{
+    padding: 1rem;
+    margin: 0.7rem 0;
+}
+
+.loader {
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: l5 1s infinite linear alternate;
+  }
+  @keyframes l5 {
+      0%  {box-shadow: 20px 0 #3a37e6, -20px 0 #0002;background: #3a37e6 }
+      33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #3a37e6}
+      66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
+      100%{box-shadow: 20px 0 #0002,-20px 0 #3a37e6; background: #000 }
+  }

@@ -9,19 +9,24 @@ const cancelBtn = document.getElementById("cancel-task");
 //     modalBox.style.display = "none";
 // })
 
-// cancel modal
+// Close modal
 function closeModal() {
     modalBox.style.display = "none";
     addTaskDiv.style.display = "none";
-    deleteTaskDiv.style.display = "none";
+    // deleteTaskDiv.style.display = "none";
+    deleteTaskDiv ? deleteTaskDiv.style.display = "none": "" ;
 }
-addTaskBtn.addEventListener('click',e => {
+
+// add task (Opens modal and add task container)
+function addTask() {
     modalBox.style.display = "flex";
     addTaskDiv.style.display = "block";
     // addTaskDiv.classList.add("d-block");
-})
-delTaskBtn.addEventListener('click',e => {
+}
+
+// Delete Task
+function delTask() {
     modalBox.style.display = "flex";
     addTaskDiv.style.display = "none";
     deleteTaskDiv.style.display = "block";
-})
+}

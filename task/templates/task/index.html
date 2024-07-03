@@ -9,13 +9,21 @@
 
 <div class="pry-container">
     {% include 'sidebar.html' %}
+
     <section class="main-container">
         
         {% include 'top-nav.html' %}
         {% include 'bottom-nav.html' %}
-    
-        <!-- Tasks Status -->
-        <div class="grid three-containers-grid status-grid-container">
+
+        <div class="flex-ctr-ctr loader-container">
+            <div class="loader"></div>
+        </div>
+
+        <p class="fetch-error" id="fetchError"></p>
+        
+        <div class="d-none tasks-container">
+            <!-- Tasks Status -->
+            <div class="grid three-containers-grid status-grid-container">
                 <div class="flex flex-btw status-grid inprogress-bar">
                     <p>In progress <span>({{inprogress_tasks.count}})</span></p>
                     <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
@@ -28,15 +36,21 @@
                     <p>Overdue <span>({{overdue_tasks.count}})</span></p>
                     <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
                 </div>
-        </div>
-    
-        <!-- tasks -->
-        <div class="grid three-containers-grid task-grid-container" id="task-grid-container">
+            </div>
 
-            <!-- JS tasks -->
+            <!-- tasks -->
+            <div class="grid three-containers-grid task-grid-container" id="task-grid-container">
+
+                <!-- JS tasks -->
+            </div>
         </div>
+
     </section>
     
 </div>
 
 {% endblock content %}
+
+{% block js %} 
+<script src="{% static '/js/tasks.js' %}"></script>
+{% endblock js %}

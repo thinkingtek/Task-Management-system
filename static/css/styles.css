@@ -161,6 +161,11 @@
     width: 15px;
     height: 15px; }
 
+.fetch-error {
+  color: red;
+  letter-spacing: 0.3;
+  padding: 0.4rem 0; }
+
 .task-grid-container {
   gap: 3rem; }
   .task-grid-container .priority-time-category {
