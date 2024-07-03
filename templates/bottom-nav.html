@@ -25,9 +25,10 @@
     </div>
   </div>
   <div class="flex add-profile">
+    {% if user.is_authenticated %}
     <div class="relative flex profiles">
       <img
-        src="{% static 'img/profile-pic.jpg' %}"
+        src="{{request.user.profile.image.url}}"
         alt=""
         srcset=""
         class="cover"
@@ -42,5 +43,6 @@
     <div class="pointer add-task" id="add-task-btn">
       <p>+ Add task</p>
     </div>
+    {% endif %}
   </div>
 </div>

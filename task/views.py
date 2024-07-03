@@ -36,7 +36,7 @@ def taskCreate(request):
 def taskUpdate(request, pk):
     try:
         task = Task.objects.get(pk=pk)
-    except:
+    except Task.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     serializer = TaskSerializer(instance=task, data=request.data)
@@ -52,7 +52,7 @@ def taskUpdate(request, pk):
 def taskDelete(request, pk):
     try:
         task = Task.objects.get(pk=pk)
-    except:
+    except Task.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     task.delete()
     return Response("Item successfully deleted")
@@ -62,7 +62,7 @@ def taskDelete(request, pk):
 def taskDetails(request, pk):
     try:
         task = Task.objects.get(pk=pk)
-    except:
+    except Task.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     serializer = TaskSerializer(task, many=False)
     return Response(serializer.data)
