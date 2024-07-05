@@ -7,14 +7,19 @@
       src="{% static 'img/icons/icons8-search-100.png' %}"
       alt=""
       srcset=""
+      class="pointer"
+      onclick="searchTaskForm(event)"
     />
-    <input
-      type="search"
-      name="search-task"
-      id=""
-      placeholder="Search tasks"
-      class="search-tasks"
-    />
+    <form action="" method="get" id="search-task-form" onsubmit="searchTaskForm(event)">
+
+      <input
+        type="search"
+        name="search-task"
+        id="search-input"
+        placeholder="Search tasks"
+        class="search-tasks"
+      />
+    </form>
   </div>
   <div class="flex notification-icons">
     <img

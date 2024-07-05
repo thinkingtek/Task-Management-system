@@ -90,6 +90,31 @@ async function taskLists() {
     });
 }
 
+
+// Search Filtering
+async function searchTaskForm(event) {  
+    event.preventDefault(); 
+    const input = document.getElementById("search-input");
+    showLoader();
+    taskContainer.classList.add("d-none");
+    console.log(input.value.toLowerCase().trim());
+    const lowerCaseIput = input.value.toLowerCase().trim();
+    const data = await fetchTasks()
+    .then((tasks) => {
+        const flteredtasks = tasks.filter(task => task.title.toLowerCase().includes(lowerCaseIput));
+        console.log(flteredtasks);
+        setTimeout(() => {
+            taskContainer.classList.remove("d-none");
+            hideLoader();
+            htmlFunc(flteredtasks)
+        }, 500);
+    })
+    .catch(error => {
+        hideLoader();
+        apiError.innerText = error.message;
+    });
+    
+}
 // Filter tasks based on proirity and status
 async function filterTasks(event) {   
     showLoader();
