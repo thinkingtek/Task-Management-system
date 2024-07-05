@@ -134,7 +134,12 @@
         border-radius: 4px;
         align-items: center;
         gap: 5px;
+        select{
+            outline: none;
+            border: none;
+        }
     }
+    
     .detail-bottom-nav .del-btn,
     .detail-bottom-nav a{
         padding: 0.4rem;
@@ -190,7 +195,6 @@
 
 // select boxes
 .status-grid-container{
-    gap: 3rem;
     margin-bottom: 1rem;
     .status-grid{
         background-color: $white;
@@ -204,6 +208,9 @@
         height: 15px;
     }
 }
+.status-grid-container,.task-grid-container{
+    gap: 1.8rem;
+}
 
 // Fetch error
 .fetch-error{
@@ -215,7 +222,7 @@
 
 // task grids 
 .task-grid-container{
-    gap: 3rem;
+    
     .priority-time-category {
         gap: 0.8rem;
         margin-bottom: 0.5rem;

@@ -2,6 +2,7 @@
 .loader-container{
     padding: 1rem;
     margin: 0.7rem 0;
+    flex-direction: column;
 }
 
 .loader {

@@ -13,7 +13,12 @@
     </div>
     <div class="flex sort">
       <img src="{% static 'img/icons/icons8-sort-24.png' %}" alt="" srcset="" />
-      <p>Sort</p>
+      <select name="sort-tasks" class="pointer" id="sortTasks" onchange="sortTasks(event)">
+        <option disabled selected>Due dates</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
     </div>
     <div class="flex filter">
       <img
@@ -21,7 +26,16 @@
         alt=""
         srcset=""
       />
-      <p>Filter</p>
+      <select name="filter" class="pointer" id="filter" onchange="filterTasks(event)">
+        <option disabled selected>Filter by (Status & Priority)</option>
+        <option value="in progress">in progress</option>
+        <option value="completed">Completed</option>
+        <option value="overdue">Overdue</option>
+        <option disabled>-- Priority --</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
     </div>
   </div>
   <div class="flex add-profile">

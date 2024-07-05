@@ -107,6 +107,9 @@
     border-radius: 4px;
     align-items: center;
     gap: 5px; }
+    .bottom-nav .prev-filter-sort div select {
+      outline: none;
+      border: none; }
   .bottom-nav .detail-bottom-nav .del-btn,
   .bottom-nav .detail-bottom-nav a {
     padding: 0.4rem;
@@ -149,7 +152,6 @@
   gap: 0.5rem; }
 
 .status-grid-container {
-  gap: 3rem;
   margin-bottom: 1rem; }
   .status-grid-container .status-grid {
     background-color: #ffffff;
@@ -161,73 +163,74 @@
     width: 15px;
     height: 15px; }
 
+.status-grid-container, .task-grid-container {
+  gap: 1.8rem; }
+
 .fetch-error {
   color: red;
   letter-spacing: 0.3;
   padding: 0.4rem 0; }
 
-.task-grid-container {
-  gap: 3rem; }
-  .task-grid-container .priority-time-category {
-    gap: 0.8rem;
-    margin-bottom: 0.5rem; }
-    .task-grid-container .priority-time-category div {
-      font-size: 0.7rem;
-      padding: 5px;
-      background-color: #e4e4e4;
-      color: purple;
-      border: none;
-      border-radius: 4px;
-      text-align: center; }
-    .task-grid-container .priority-time-category .priority {
-      background-color: #ffd0d0;
-      color: #802525; }
-    .task-grid-container .priority-time-category .time {
-      background-color: white;
-      color: #3a37e6;
-      gap: 5px;
-      box-shadow: 2px 3px rgba(131, 131, 131, 0.3); }
-      .task-grid-container .priority-time-category .time img {
-        width: 15px;
-        height: 15px; }
-  .task-grid-container .task-details {
+.task-grid-container .priority-time-category {
+  gap: 0.8rem;
+  margin-bottom: 0.5rem; }
+  .task-grid-container .priority-time-category div {
+    font-size: 0.7rem;
+    padding: 5px;
     background-color: #e4e4e4;
-    padding: 8px 6px;
-    border-radius: 4px; }
-    .task-grid-container .task-details h4 {
-      font-weight: lighter;
-      font-size: 0.9rem;
-      color: black; }
-    .task-grid-container .task-details .task-desc {
-      color: #756e6e;
-      font-size: 0.8rem;
-      letter-spacing: 0.4;
-      margin: 0.5rem 0; }
-    .task-grid-container .task-details .task-title img {
+    color: purple;
+    border: none;
+    border-radius: 4px;
+    text-align: center; }
+  .task-grid-container .priority-time-category .priority {
+    background-color: #ffd0d0;
+    color: #802525; }
+  .task-grid-container .priority-time-category .time {
+    background-color: white;
+    color: #3a37e6;
+    gap: 5px;
+    box-shadow: 2px 3px rgba(131, 131, 131, 0.3); }
+    .task-grid-container .priority-time-category .time img {
+      width: 15px;
+      height: 15px; }
+.task-grid-container .task-details {
+  background-color: #e4e4e4;
+  padding: 8px 6px;
+  border-radius: 4px; }
+  .task-grid-container .task-details h4 {
+    font-weight: lighter;
+    font-size: 0.9rem;
+    color: black; }
+  .task-grid-container .task-details .task-desc {
+    color: #756e6e;
+    font-size: 0.8rem;
+    letter-spacing: 0.4;
+    margin: 0.5rem 0; }
+  .task-grid-container .task-details .task-title img {
+    width: 14px;
+    height: 14px; }
+  .task-grid-container .task-details .task-date {
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 2px 4px;
+    width: fit-content;
+    font-size: 0.8rem;
+    letter-spacing: 0.5;
+    gap: 5px; }
+    .task-grid-container .task-details .task-date img {
       width: 14px;
       height: 14px; }
-    .task-grid-container .task-details .task-date {
-      border: 1px solid rgba(128, 128, 128, 0.4);
-      background-color: #ffffff;
-      border-radius: 4px;
-      padding: 2px 4px;
-      width: fit-content;
-      font-size: 0.8rem;
-      letter-spacing: 0.5;
+  .task-grid-container .task-details .users-icons {
+    margin-top: 13px; }
+    .task-grid-container .task-details .users-icons .profile-pix img {
+      width: 23px;
+      height: 23px; }
+    .task-grid-container .task-details .users-icons .icons-div {
       gap: 5px; }
-      .task-grid-container .task-details .task-date img {
-        width: 14px;
-        height: 14px; }
-    .task-grid-container .task-details .users-icons {
-      margin-top: 13px; }
-      .task-grid-container .task-details .users-icons .profile-pix img {
-        width: 23px;
-        height: 23px; }
-      .task-grid-container .task-details .users-icons .icons-div {
-        gap: 5px; }
-        .task-grid-container .task-details .users-icons .icons-div img {
-          width: 20;
-          height: 20; }
+      .task-grid-container .task-details .users-icons .icons-div img {
+        width: 20;
+        height: 20; }
 
 .add-task-container {
   background-color: white;
