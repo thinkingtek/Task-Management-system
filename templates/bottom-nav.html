@@ -15,9 +15,8 @@
       <img src="{% static 'img/icons/icons8-sort-24.png' %}" alt="" srcset="" />
       <select name="sort-tasks" class="pointer" id="sortTasks" onchange="sortTasks(event)">
         <option disabled selected>Due dates</option>
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
+        <option value="ascending">Ascending</option>
+        <option value="decending">Decending</option>
       </select>
     </div>
     <div class="flex filter">
@@ -27,7 +26,7 @@
         srcset=""
       />
       <select name="filter" class="pointer" id="filter" onchange="filterTasks(event)">
-        <option disabled selected>Filter by (Status & Priority)</option>
+        <option disabled selected>(Status & Priority)</option>
         <option value="in progress">in progress</option>
         <option value="completed">Completed</option>
         <option value="overdue">Overdue</option>

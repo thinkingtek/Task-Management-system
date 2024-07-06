@@ -2,6 +2,7 @@ const loader = document.querySelector(".loader-container");
 const apiError = document.getElementById("fetchError");
 const taskContainer = document.querySelector(".tasks-container");
 const apiURL = 'http://127.0.0.1:8000/api-task-list/';
+const now  = new Date();
 
 // hide & show loader
 function showLoader() {
@@ -11,6 +12,14 @@ function showLoader() {
 function hideLoader() {
     loader.classList.remove("flex");
     loader.classList.add("d-none");
+}
+
+// hide & show Task container
+function showTaskContainer() {
+    taskContainer.classList.remove("d-none");
+}
+function hideTaskContainer() {
+    taskContainer.classList.add("d-none");
 }
 
 // Displaying fetched or filtered Tasks in the DOM
@@ -96,17 +105,17 @@ async function searchTaskForm(event) {
     event.preventDefault(); 
     const input = document.getElementById("search-input");
     showLoader();
-    taskContainer.classList.add("d-none");
+    hideTaskContainer();
     console.log(input.value.toLowerCase().trim());
     const lowerCaseIput = input.value.toLowerCase().trim();
     const data = await fetchTasks()
     .then((tasks) => {
-        const flteredtasks = tasks.filter(task => task.title.toLowerCase().includes(lowerCaseIput));
-        console.log(flteredtasks);
+        const filteredtasks = tasks.filter(task => task.title.toLowerCase().includes(lowerCaseIput));
+        console.log(filteredtasks);
         setTimeout(() => {
-            taskContainer.classList.remove("d-none");
+            showTaskContainer();
             hideLoader();
-            htmlFunc(flteredtasks)
+            htmlFunc(filteredtasks)
         }, 500);
     })
     .catch(error => {
@@ -118,16 +127,16 @@ async function searchTaskForm(event) {
 // Filter tasks based on proirity and status
 async function filterTasks(event) {   
     showLoader();
-    taskContainer.classList.add("d-none");
+    hideTaskContainer();
     const input = event.target.value;
     const data = await fetchTasks()
     .then((tasks) => {
-        const flteredtasks = tasks.filter(task => task.status == input || task.priority == input);
-        console.log(flteredtasks);
+        const filteredtasks = tasks.filter(task => task.status == input || task.priority == input);
+        console.log(filteredtasks);
         setTimeout(() => {
-            taskContainer.classList.remove("d-none");
+            showTaskContainer();
             hideLoader();
-            htmlFunc(flteredtasks)
+            htmlFunc(filteredtasks)
         }, 500);
     })
     .catch(error => {
@@ -137,9 +146,23 @@ async function filterTasks(event) {
     
 }
 // get sorted tasks
-function sortTasks(event) {   
-    console.log(event.target.value);
-    // fetchTasks();
+async function sortTasks(event) {   
+    showLoader();
+    hideTaskContainer();
+    const input = event.target.value;
+    const data = await fetchTasks()
+    .then((tasks) => {
+        let flteredtasks = tasks;
+        if (input == "decending") {
+            flteredtasks = tasks.sort((a, b) => new Date(b.due_date) - new Date(a.due_date));
+        }else {flteredtasks = tasks.sort((a, b) => new Date(a.due_date) - new Date(b.due_date));}
+
+        setTimeout(() => {
+            showTaskContainer();
+            hideLoader();
+            htmlFunc(flteredtasks)
+        }, 500);
+    })
 }
 
 window.onload = taskLists;
