@@ -158,10 +158,23 @@
     padding: 0.4rem;
     border-radius: 4px;
     border: 1px solid #3a37e6;
-    font-size: 0.8rem; }
+    font-size: 0.8rem;
+    transition: 0.2s ease-in; }
+  .status-grid-container .status-grid div {
+    gap: 0.3rem; }
   .status-grid-container .status-grid img {
     width: 15px;
     height: 15px; }
+  .status-grid-container .drag-leave {
+    border: 1px solid #3a37e6;
+    border-radius: 4px; }
+  .status-grid-container .drag-over {
+    border: 2px solid gray;
+    border-radius: 8px; }
+  .status-grid-container .drag-enter {
+    border: 2px solid #4c63a2;
+    border-radius: 8px;
+    padding: 0.45rem; }
 
 .status-grid-container, .task-grid-container {
   gap: 1.8rem; }

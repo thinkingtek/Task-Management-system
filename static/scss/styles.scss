@@ -202,15 +202,35 @@
         border-radius: 4px;
         border: 1px solid $drk-purple;
         font-size: 0.8rem;
+        transition: 0.2s ease-in;
+    }.status-grid div {
+        gap: 0.3rem;
     }
     .status-grid img{
         width: 15px;
         height: 15px;
     }
+
+    
+    .drag-leave{
+        border: 1px solid $drk-purple;
+        border-radius: 4px;
+    }
+    .drag-over{
+        border: 2px solid gray;
+        border-radius: 8px;
+    }
+    .drag-enter{
+        border: 2px solid $fb-clr;
+        border-radius: 8px;
+        padding: 0.45rem;
+        // border: 2px solid gray;
+    }
 }
 .status-grid-container,.task-grid-container{
     gap: 1.8rem;
 }
+
 
 // Fetch error
 .fetch-error{

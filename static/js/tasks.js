@@ -1,7 +1,7 @@
 const loader = document.querySelector(".loader-container");
 const apiError = document.getElementById("fetchError");
 const taskContainer = document.querySelector(".tasks-container");
-const apiURL = 'http://127.0.0.1:8000/api-task-list/';
+
 const now  = new Date();
 
 // hide & show loader
@@ -29,7 +29,7 @@ const htmlFunc = (tasks) => {
 
     tasks.forEach(task => {
         const tasksDiv = document.createElement('div');
-        tasksDiv.setAttribute('id',task.id);
+        tasksDiv.setAttribute('data-index',task.id);
 
         tasksDiv.innerHTML = `
             <div class="grid align-ctr three-containers-grid priority-time-category">
@@ -42,7 +42,7 @@ const htmlFunc = (tasks) => {
             </div>
             <div class="task-details">
                 <div class="flex flex-btw task-title">
-                    <a href="task-details/${task.id}/">${task.title}</a>
+                    <a href="task-details/${task.id}/" draggable="true" data-index="${task.id}" class="draggables">${task.title}</a>
                     <img src="static/img/icons/icons8-menu-vertical-50.png" alt="" srcset="">
                 </div>
                 <p class="task-desc">
@@ -70,11 +70,13 @@ const htmlFunc = (tasks) => {
         `;
     tasksContainer.appendChild(tasksDiv)
     });
+
+    addEventListeners();
 }
 
 // Fecting from API
 async function fetchTasks() {
-    const response = await fetch(apiURL)
+    const response = await fetch(apiURL);
     if (!response.ok) {
         throw new Error('Network response was not OK');
     }
@@ -90,7 +92,6 @@ async function taskLists() {
             taskContainer.classList.remove("d-none");
             hideLoader();
             htmlFunc(tasks);
-            console.log("------Fetching all Task lists---------");
         }, 500);
     })
     .catch(error => {
@@ -98,7 +99,6 @@ async function taskLists() {
         apiError.innerText = error.message;
     });
 }
-
 
 // Search Filtering
 async function searchTaskForm(event) {  
@@ -145,6 +145,7 @@ async function filterTasks(event) {
     });
     
 }
+
 // get sorted tasks
 async function sortTasks(event) {   
     showLoader();

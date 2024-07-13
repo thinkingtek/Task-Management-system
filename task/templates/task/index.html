@@ -24,16 +24,24 @@
         <div class="d-none tasks-container">
             <!-- Tasks Status -->
             <div class="grid three-containers-grid status-grid-container">
-                <div class="flex flex-btw status-grid inprogress-bar">
-                    <p>In progress <span>({{inprogress_tasks.count}})</span></p>
+                <div class="flex flex-btw status-grid inprogress-bar" ondrop="drop(event)" ondragleave="dragLeave(event)" ondragenter="dragEnter(event)" ondragover="dragOver(event)" id="">
+                    <div class="flex-ctr-ctr">
+                        <p class="inprogress-p">In progress ({{inprogress_tasks.count}})</p>
+                    </div>
                     <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
                 </div>
-                <div class="flex flex-btw status-grid completed-bar">
-                    <p>Completed task <span>({{completed_tasks.count}})</span></p>
+
+                <div class="flex flex-btw status-grid completed-bar" ondrop="drop(event)" ondragleave="dragLeave(event)" ondragenter="dragEnter(event)" ondragover="dragOver(event)">
+                    <div class="flex-ctr-ctr">
+                        <p class="completed-p">Completed task ({{completed_tasks.count}}) </p>
+                    </div>
                     <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
                 </div>
-                <div class="flex flex-btw status-grid overdue-bar">
-                    <p>Overdue <span>({{overdue_tasks.count}})</span></p>
+
+                <div class="flex flex-btw status-grid overdue-bar" ondrop="drop(event)" ondragleave="dragLeave(event)" ondragenter="dragEnter(event)" ondragover="dragOver(event)">
+                    <div class="flex-ctr-ctr ">
+                        <p class="overdue-p">Overdue ({{overdue_tasks.count}}) </p>
+                    </div>
                     <img src="{% static 'img/icons/icons8-menu-vertical-50.png' %}" alt="" srcset="">
                 </div>
             </div>
@@ -43,6 +51,7 @@
 
                 <!-- JS tasks -->
             </div>
+
         </div>
 
     </section>
@@ -53,4 +62,5 @@
 
 {% block js %} 
 <script src="{% static '/js/tasks.js' %}"></script>
+<script src="{% static '/js/drag-drop.js' %}"></script>
 {% endblock js %}

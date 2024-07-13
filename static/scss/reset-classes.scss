@@ -23,6 +23,12 @@ body {
 .n-border{
     border: none;
 }
+.hidden{
+    visibility: hidden;
+}
+.n-padding{
+    padding: none;
+}
 .modalbox {
  background-color: rgba(20, 20, 20, 0.5);
  position: fixed;
