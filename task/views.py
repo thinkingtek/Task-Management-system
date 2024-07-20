@@ -88,7 +88,7 @@ class Index(TemplateView):
 class AddTask(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Task
     form_class = AddTaskForm
-    template_name = 'task/add-task-form.html'
+    template_name = 'task/add-task.html'
     success_message = 'Task added'
 
     def form_valid(self, form):
@@ -110,8 +110,8 @@ class UpdateTask(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_message = 'Task Updated'
 
     def form_valid(self, form):
-        # form.instance.user = self.request.user
-        return super().form_valid(form)
+        form.instance.user = self.request.user
+        return super(UpdateTask, self).form_valid(form)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

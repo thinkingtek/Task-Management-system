@@ -1,6 +1,7 @@
 from django.db import models
 from account.models import User
 from django.urls import reverse
+from django.utils import timezone
 
 
 class Task(models.Model):
@@ -24,7 +25,7 @@ class Task(models.Model):
         max_length=15, choices=STATUS_CHOICES)
     category = models.CharField(max_length=100)
     description = models.TextField()
-    timestamp = models.DateTimeField(auto_now_add=True)
+    timestamp = models.DateTimeField(default=timezone.now, editable=True)
     due_date = models.DateTimeField()
 
     class Meta:
