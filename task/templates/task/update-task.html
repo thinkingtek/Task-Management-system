@@ -42,7 +42,7 @@
 
     <section class="add-task-container" id="add-task-container">
         <h3 class="txt-ctr">Update Task</h3>
-        <form action="{% url 'task:add-task' %}" method="post" enctype="multipart/form-data" class="add-task-form">
+        <form action="." method="post" enctype="multipart/form-data" class="add-task-form">
             {% csrf_token %}
             <div class="form-grid-2">
                 <div class="input-container">

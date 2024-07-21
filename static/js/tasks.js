@@ -1,7 +1,7 @@
 const loader = document.querySelector(".loader-container");
 const apiError = document.getElementById("fetchError");
 const taskContainer = document.querySelector(".tasks-container");
-
+const noTasks = document.querySelector(".no-task");
 const now  = new Date();
 
 // hide & show loader
@@ -22,12 +22,21 @@ function hideTaskContainer() {
     taskContainer.classList.add("d-none");
 }
 
+// hide and show no Task
+function showEmptyTag() {
+    noTasks.classList.remove("d-none");
+}
+function hideEmptyTag() {
+    noTasks.classList.add("d-none");
+}
+
 // Displaying fetched or filtered Tasks in the DOM
 const htmlFunc = (tasks) => {
     const tasksContainer = document.getElementById("task-grid-container");
     tasksContainer.innerHTML = "";
 
     tasks.forEach(task => {
+        hideEmptyTag();
         const tasksDiv = document.createElement('div');
         tasksDiv.setAttribute('data-index',task.id);
 
@@ -42,8 +51,8 @@ const htmlFunc = (tasks) => {
             </div>
             <div class="task-details">
                 <div class="flex flex-btw task-title">
-                    <a href="task-details/${task.id}/" draggable="true" data-index="${task.id}" class="draggables">${task.title}</a>
-                    <img src="static/img/icons/icons8-menu-vertical-50.png" alt="" srcset="">
+                    <a href="task-details/${task.id}/" draggable="true" data-index="${task.id}" class="draggables grabbing">${task.title}</a>
+                    <img src="static/img/icons/icons8-drag-and-drop-no-outline-24-1×.png" alt="" srcset="">
                 </div>
                 <p class="task-desc">
                     ${task.description}
@@ -68,8 +77,13 @@ const htmlFunc = (tasks) => {
                 </div>
             </div>
         `;
-    tasksContainer.appendChild(tasksDiv)
+    
+    tasksContainer.appendChild(tasksDiv);
     });
+
+    if (tasks.length < 1) {
+        showEmptyTag();
+    }
 
     addEventListeners();
 }

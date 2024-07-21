@@ -91,8 +91,8 @@ class TestTaskViews(TestCase):
             'title': 'Updated Task Title',
             'description': 'Updated description'
         }
-        form = AddTaskForm(data=form_data)
-        self.assertTrue(form.is_valid)
+        # form = AddTaskForm(data=form_data)
+        # self.assertTrue(form.is_valid)
 
         response = self.client.post(self.task_update_url, form_data)
         self.task.refresh_from_db()

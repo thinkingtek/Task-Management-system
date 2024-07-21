@@ -220,8 +220,8 @@
     letter-spacing: 0.4;
     margin: 0.5rem 0; }
   .task-grid-container .task-details .task-title img {
-    width: 14px;
-    height: 14px; }
+    width: 16px;
+    height: 16px; }
   .task-grid-container .task-details .task-date {
     border: 1px solid rgba(128, 128, 128, 0.4);
     background-color: #ffffff;
@@ -244,6 +244,14 @@
       .task-grid-container .task-details .users-icons .icons-div img {
         width: 20;
         height: 20; }
+
+.no-task {
+  padding: 0.8rem 0.2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: red;
+  letter-spacing: 0.3;
+  background-color: #e4e4e4; }
 
 .add-task-container {
   background-color: white;

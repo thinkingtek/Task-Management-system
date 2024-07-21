@@ -1,3 +1,6 @@
+from typing import Any
+from django.db.models.base import Model as Model
+from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -108,10 +111,6 @@ class UpdateTask(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = AddTaskForm
     template_name = 'task/update-task.html'
     success_message = 'Task Updated'
-
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super(UpdateTask, self).form_valid(form)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
