@@ -29,6 +29,22 @@ function showEmptyTag() {
 function hideEmptyTag() {
     noTasks.classList.add("d-none");
 }
+ // Function to truncate the description
+//  truncate strings
+//  function truncateDescription(description, maxLength) {
+//     if (description.length > maxLength) {
+//         return description.substring(0, maxLength) + '...';
+//     }
+//     return description;
+// }
+// truncate words
+function truncateDescription(description, maxWords) {
+    const words = description.split(' ');
+    if (words.length > maxWords) {
+        return words.slice(0, maxWords).join(' ') + '...';
+    }
+    return description;
+}
 
 // Displaying fetched or filtered Tasks in the DOM
 const htmlFunc = (tasks) => {
@@ -37,6 +53,8 @@ const htmlFunc = (tasks) => {
 
     tasks.forEach(task => {
         hideEmptyTag();
+        // Truncate to 30 characters
+        const truncatedDescription = truncateDescription(task.description, 30); 
         const tasksDiv = document.createElement('div');
         tasksDiv.setAttribute('data-index',task.id);
 
@@ -55,7 +73,7 @@ const htmlFunc = (tasks) => {
                     <img src="static/img/icons/icons8-drag-and-drop-no-outline-24-1×.png" alt="" srcset="">
                 </div>
                 <p class="task-desc">
-                    ${task.description}
+                    ${truncatedDescription}
                 </p>
                 <div class="flex-ctr task-date">
                     <img src="static/img/icons/icons8-calender-64.png" alt="" srcset="">
