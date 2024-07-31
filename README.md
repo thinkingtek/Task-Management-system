@@ -3,12 +3,12 @@
    - Project Name: Task Management.
    - Description: This is a project that manage tasks for a Software Enterprise. This project was built using Just Html, CSS, Django and Vanilla JavaScript.
    - Purpose: Its main purpose is to create, update, and delete tasks for Software developers in the company.
-   - Link to Demo: My github link.
+   - Link to Demo: My github link ( https://github.com/thinkingtek/Task-Management-system.git )
 
 2. Installation
 
    - Clone the repository:
-     git clone https://github.com/myusername/yourproject.git
+     git clone https://github.com/thinkingtek/Task-Management-system.git
 
    - Change directory:
      cd yourproject
