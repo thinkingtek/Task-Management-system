@@ -1,7 +1,7 @@
 1. Project Overview
 
    - Project Name: Task Management.
-   - Description: This is a project that manage tasks for a Software Enterprise. This project was built using Just Html, CSS, Django and Vanilla JavaScript.
+   - Description: This is a project that manage tasks for a Software Enterprise. This project was built using Just Html, CSS, Django, Django RestFramework and Vanilla JavaScript.
    - Purpose: Its main purpose is to create, update, and delete tasks for Software developers in the company.
    - Link to Demo: My github link ( https://github.com/thinkingtek/Task-Management-system.git )
 
@@ -31,9 +31,10 @@
 
 4. Features
 
-   - List of Features: Task creation, task management, user authentication, etc.
+   - List of Features: Task creation,update, task management, user authentication, etc.
    - Using JS async and await to fetch tasks from api endpoints
    - Drag and drop feature to update task status
+   - Search tasks 
 
 5. Testing
 
